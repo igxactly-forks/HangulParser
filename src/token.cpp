@@ -53,6 +53,7 @@ static int get_index(const std::vector<std::wstring>& list, const std::wstring& 
 void fill_buffer(int pos, const std::wstring& in)
 {
 	std::wcout<<in<<std::endl;
+	std::wcout.flush();
 	buffer[pos] = in;
 }
 void flush_buffer()
@@ -72,8 +73,8 @@ void flush_buffer()
 	assert(ret >= 0);
 	sum += ret;
 
-	char32_t current = (char32_t)sum;
-	std::wcout <<L"Char: "<<(wchar_t)current<<std::endl;
+	char16_t current = (char16_t)sum;
+	std::cout <<L"Char: "<<(wchar_t)current<<std::endl;
 
 	buffer[0] = L"";
 	buffer[1] = L"";
@@ -99,5 +100,5 @@ std::wstring borrow_one()
 
 void add_space()
 {
-	std::wcout<<L"Char: < >"<<std::endl;
+	std::cout<<L"Char: < >"<<std::endl;
 }
