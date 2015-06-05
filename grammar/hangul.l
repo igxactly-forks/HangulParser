@@ -202,336 +202,336 @@ SIGMA {JAUM_7}|{MOUM_3}
 %%
 
 <INITIAL,STATE_CHOSUNG>{
-{GA} { fill_buffer(CHOSUNG,L"ㄱ"); BEGIN(STATE_CHOSUNG_GA); }
-{NA} { fill_buffer(CHOSUNG,L"ㄴ"); BEGIN(STATE_CHOSUNG_NA); }
-{DA} { fill_buffer(CHOSUNG,L"ㄷ"); BEGIN(STATE_CHOSUNG_DA); }
-{BA} { fill_buffer(CHOSUNG,L"ㅂ"); BEGIN(STATE_CHOSUNG_BA); }
-{SA} { fill_buffer(CHOSUNG,L"ㅅ"); BEGIN(STATE_CHOSUNG_SA); }
-{JA} { fill_buffer(CHOSUNG,L"ㅈ"); BEGIN(STATE_CHOSUNG_JA); }
-{A} { fill_buffer(CHOSUNG,L"ㅇ"); BEGIN(STATE_CHOSUNG_A); }
+{GA} { fill_buffer(CHOSUNG,"ㄱ"); BEGIN(STATE_CHOSUNG_GA); }
+{NA} { fill_buffer(CHOSUNG,"ㄴ"); BEGIN(STATE_CHOSUNG_NA); }
+{DA} { fill_buffer(CHOSUNG,"ㄷ"); BEGIN(STATE_CHOSUNG_DA); }
+{BA} { fill_buffer(CHOSUNG,"ㅂ"); BEGIN(STATE_CHOSUNG_BA); }
+{SA} { fill_buffer(CHOSUNG,"ㅅ"); BEGIN(STATE_CHOSUNG_SA); }
+{JA} { fill_buffer(CHOSUNG,"ㅈ"); BEGIN(STATE_CHOSUNG_JA); }
+{A} { fill_buffer(CHOSUNG,"ㅇ"); BEGIN(STATE_CHOSUNG_A); }
 {X} { add_space(); BEGIN(STATE_CHOSUNG); }
 }
 
-<STATE_CHOSUNG_GA>{GA} { fill_buffer(CHOSUNG,L"ㅋ"); BEGIN(STATE_CHOSUNG_KA); }
-<STATE_CHOSUNG_KA>{GA} { fill_buffer(CHOSUNG,L"ㄲ"); BEGIN(STATE_CHOSUNG_KKA); }
-<STATE_CHOSUNG_KKA>{GA} { fill_buffer(CHOSUNG,L"ㄱ"); BEGIN(STATE_CHOSUNG_GA); }
+<STATE_CHOSUNG_GA>{GA} { fill_buffer(CHOSUNG,"ㅋ"); BEGIN(STATE_CHOSUNG_KA); }
+<STATE_CHOSUNG_KA>{GA} { fill_buffer(CHOSUNG,"ㄲ"); BEGIN(STATE_CHOSUNG_KKA); }
+<STATE_CHOSUNG_KKA>{GA} { fill_buffer(CHOSUNG,"ㄱ"); BEGIN(STATE_CHOSUNG_GA); }
 
-<STATE_CHOSUNG_DA>{DA} { fill_buffer(CHOSUNG,L"ㅌ"); BEGIN(STATE_CHOSUNG_TA); }
-<STATE_CHOSUNG_TA>{DA} { fill_buffer(CHOSUNG,L"ㄸ"); BEGIN(STATE_CHOSUNG_DDA); }
-<STATE_CHOSUNG_DDA>{DA} { fill_buffer(CHOSUNG,L"ㄷ"); BEGIN(STATE_CHOSUNG_DA); }
+<STATE_CHOSUNG_DA>{DA} { fill_buffer(CHOSUNG,"ㅌ"); BEGIN(STATE_CHOSUNG_TA); }
+<STATE_CHOSUNG_TA>{DA} { fill_buffer(CHOSUNG,"ㄸ"); BEGIN(STATE_CHOSUNG_DDA); }
+<STATE_CHOSUNG_DDA>{DA} { fill_buffer(CHOSUNG,"ㄷ"); BEGIN(STATE_CHOSUNG_DA); }
 
-<STATE_CHOSUNG_BA>{BA} { fill_buffer(CHOSUNG,L"ㅍ"); BEGIN(STATE_CHOSUNG_PA); }
-<STATE_CHOSUNG_PA>{BA} { fill_buffer(CHOSUNG,L"ㅃ"); BEGIN(STATE_CHOSUNG_PPA); }
-<STATE_CHOSUNG_PPA>{BA} { fill_buffer(CHOSUNG,L"ㅂ"); BEGIN(STATE_CHOSUNG_BA); }
+<STATE_CHOSUNG_BA>{BA} { fill_buffer(CHOSUNG,"ㅍ"); BEGIN(STATE_CHOSUNG_PA); }
+<STATE_CHOSUNG_PA>{BA} { fill_buffer(CHOSUNG,"ㅃ"); BEGIN(STATE_CHOSUNG_PPA); }
+<STATE_CHOSUNG_PPA>{BA} { fill_buffer(CHOSUNG,"ㅂ"); BEGIN(STATE_CHOSUNG_BA); }
 
-<STATE_CHOSUNG_SA>{SA} { fill_buffer(CHOSUNG,L"ㅎ"); BEGIN(STATE_CHOSUNG_HA); }
-<STATE_CHOSUNG_HA>{SA} { fill_buffer(CHOSUNG,L"ㅆ"); BEGIN(STATE_CHOSUNG_SSA); }
-<STATE_CHOSUNG_SSA>{SA} { fill_buffer(CHOSUNG,L"ㅅ"); BEGIN(STATE_CHOSUNG_SA); }
+<STATE_CHOSUNG_SA>{SA} { fill_buffer(CHOSUNG,"ㅎ"); BEGIN(STATE_CHOSUNG_HA); }
+<STATE_CHOSUNG_HA>{SA} { fill_buffer(CHOSUNG,"ㅆ"); BEGIN(STATE_CHOSUNG_SSA); }
+<STATE_CHOSUNG_SSA>{SA} { fill_buffer(CHOSUNG,"ㅅ"); BEGIN(STATE_CHOSUNG_SA); }
 
-<STATE_CHOSUNG_JA>{JA} { fill_buffer(CHOSUNG,L"ㅊ"); BEGIN(STATE_CHOSUNG_CHA); }
-<STATE_CHOSUNG_CHA>{JA} { fill_buffer(CHOSUNG,L"ㅉ"); BEGIN(STATE_CHOSUNG_JJA); }
-<STATE_CHOSUNG_JJA>{JA} { fill_buffer(CHOSUNG,L"ㅈ"); BEGIN(STATE_CHOSUNG_JA); }
+<STATE_CHOSUNG_JA>{JA} { fill_buffer(CHOSUNG,"ㅊ"); BEGIN(STATE_CHOSUNG_CHA); }
+<STATE_CHOSUNG_CHA>{JA} { fill_buffer(CHOSUNG,"ㅉ"); BEGIN(STATE_CHOSUNG_JJA); }
+<STATE_CHOSUNG_JJA>{JA} { fill_buffer(CHOSUNG,"ㅈ"); BEGIN(STATE_CHOSUNG_JA); }
 
 <STATE_MOUM,STATE_CHOSUNG_GA,STATE_CHOSUNG_NA,STATE_CHOSUNG_DA,STATE_CHOSUNG_RA,STATE_CHOSUNG_MA,STATE_CHOSUNG_BA,STATE_CHOSUNG_SA,STATE_CHOSUNG_A,STATE_CHOSUNG_JA,STATE_CHOSUNG_CHA,STATE_CHOSUNG_KA,STATE_CHOSUNG_TA,STATE_CHOSUNG_PA,STATE_CHOSUNG_HA,STATE_CHOSUNG_KKA,STATE_CHOSUNG_DDA,STATE_CHOSUNG_PPA,STATE_CHOSUNG_SSA,STATE_CHOSUNG_JJA>
 {
-{CHUN} {fill_buffer(JUNGSUNG,L"·"); BEGIN(STATE_MOUM_C);}
-{JI} {fill_buffer(JUNGSUNG,L"ㅡ"); BEGIN(STATE_MOUM_EU);}
-{IN} {fill_buffer(JUNGSUNG,L"ㅣ"); BEGIN(STATE_MOUM_I);}
+{CHUN} {fill_buffer(JUNGSUNG,"·"); BEGIN(STATE_MOUM_C);}
+{JI} {fill_buffer(JUNGSUNG,"ㅡ"); BEGIN(STATE_MOUM_EU);}
+{IN} {fill_buffer(JUNGSUNG,"ㅣ"); BEGIN(STATE_MOUM_I);}
 }
 
 <STATE_MOUM_C>
 {
-{CHUN} {fill_buffer(JUNGSUNG,L"··"); BEGIN(STATE_MOUM_CC);}
-{JI} {fill_buffer(JUNGSUNG,L"ㅗ"); BEGIN(STATE_MOUM_O);}
-{IN} {fill_buffer(JUNGSUNG,L"ㅓ"); BEGIN(STATE_MOUM_EO);}
+{CHUN} {fill_buffer(JUNGSUNG,"··"); BEGIN(STATE_MOUM_CC);}
+{JI} {fill_buffer(JUNGSUNG,"ㅗ"); BEGIN(STATE_MOUM_O);}
+{IN} {fill_buffer(JUNGSUNG,"ㅓ"); BEGIN(STATE_MOUM_EO);}
 }
 
 <STATE_MOUM_EU>
 {
-{CHUN} {fill_buffer(JUNGSUNG,L"ㅜ"); BEGIN(STATE_MOUM_U);}
-{IN} {fill_buffer(JUNGSUNG,L"ㅢ"); BEGIN(STATE_MOUM_UI);}
+{CHUN} {fill_buffer(JUNGSUNG,"ㅜ"); BEGIN(STATE_MOUM_U);}
+{IN} {fill_buffer(JUNGSUNG,"ㅢ"); BEGIN(STATE_MOUM_UI);}
 }
 
 <STATE_MOUM_I>
 {
-{CHUN} {fill_buffer(JUNGSUNG,L"ㅏ"); BEGIN(STATE_MOUM_A);}
+{CHUN} {fill_buffer(JUNGSUNG,"ㅏ"); BEGIN(STATE_MOUM_A);}
 }
 
 <STATE_MOUM_CC>
 {
-{JI} {fill_buffer(JUNGSUNG,L"ㅛ"); BEGIN(STATE_MOUM_YO);}
-{IN} {fill_buffer(JUNGSUNG,L"ㅕ"); BEGIN(STATE_MOUM_YEO);}
+{JI} {fill_buffer(JUNGSUNG,"ㅛ"); BEGIN(STATE_MOUM_YO);}
+{IN} {fill_buffer(JUNGSUNG,"ㅕ"); BEGIN(STATE_MOUM_YEO);}
 }
 
 <STATE_MOUM_O>
 {
-{IN} {fill_buffer(JUNGSUNG,L"ㅚ"); BEGIN(STATE_MOUM_OE);}
+{IN} {fill_buffer(JUNGSUNG,"ㅚ"); BEGIN(STATE_MOUM_OE);}
 }
 
 <STATE_MOUM_EO>
 {
-{IN} {fill_buffer(JUNGSUNG,L"ㅔ"); BEGIN(STATE_MOUM_E);}
+{IN} {fill_buffer(JUNGSUNG,"ㅔ"); BEGIN(STATE_MOUM_E);}
 }
 
 <STATE_MOUM_U>
 {
-{CHUN} {fill_buffer(JUNGSUNG,L"ㅠ"); BEGIN(STATE_MOUM_YU);}
-{IN} {fill_buffer(JUNGSUNG,L"ㅟ"); BEGIN(STATE_MOUM_WI);}
+{CHUN} {fill_buffer(JUNGSUNG,"ㅠ"); BEGIN(STATE_MOUM_YU);}
+{IN} {fill_buffer(JUNGSUNG,"ㅟ"); BEGIN(STATE_MOUM_WI);}
 }
 
 <STATE_MOUM_A>
 {
-{CHUN} {fill_buffer(JUNGSUNG,L"ㅑ"); BEGIN(STATE_MOUM_YA);}
-{IN} {fill_buffer(JUNGSUNG,L"ㅐ"); BEGIN(STATE_MOUM_AE);}
+{CHUN} {fill_buffer(JUNGSUNG,"ㅑ"); BEGIN(STATE_MOUM_YA);}
+{IN} {fill_buffer(JUNGSUNG,"ㅐ"); BEGIN(STATE_MOUM_AE);}
 }
 
-<STATE_MOUM_YEO>{IN} {fill_buffer(JUNGSUNG,L"ㅖ"); BEGIN(STATE_MOUM_YE);}
-<STATE_MOUM_OE>{CHUN} {fill_buffer(JUNGSUNG,L"ㅘ"); BEGIN(STATE_MOUM_WA);}
-<STATE_MOUM_YU>{IN} {fill_buffer(JUNGSUNG,L"ㅝ"); BEGIN(STATE_MOUM_WO);}
-<STATE_MOUM_YA>{IN} {fill_buffer(JUNGSUNG,L"ㅒ"); BEGIN(STATE_MOUM_YAE);}
+<STATE_MOUM_YEO>{IN} {fill_buffer(JUNGSUNG,"ㅖ"); BEGIN(STATE_MOUM_YE);}
+<STATE_MOUM_OE>{CHUN} {fill_buffer(JUNGSUNG,"ㅘ"); BEGIN(STATE_MOUM_WA);}
+<STATE_MOUM_YU>{IN} {fill_buffer(JUNGSUNG,"ㅝ"); BEGIN(STATE_MOUM_WO);}
+<STATE_MOUM_YA>{IN} {fill_buffer(JUNGSUNG,"ㅒ"); BEGIN(STATE_MOUM_YAE);}
 
-<STATE_MOUM_WA>{IN} {fill_buffer(JUNGSUNG,L"ㅙ"); BEGIN(STATE_MOUM_WAE);}
-<STATE_MOUM_WO>{IN} {fill_buffer(JUNGSUNG,L"ㅞ"); BEGIN(STATE_MOUM_WE);}
+<STATE_MOUM_WA>{IN} {fill_buffer(JUNGSUNG,"ㅙ"); BEGIN(STATE_MOUM_WAE);}
+<STATE_MOUM_WO>{IN} {fill_buffer(JUNGSUNG,"ㅞ"); BEGIN(STATE_MOUM_WE);}
 
 
 <STATE_MOUM_A,STATE_MOUM_YA,STATE_MOUM_EO,STATE_MOUM_YEO,STATE_MOUM_O,STATE_MOUM_YO,STATE_MOUM_U,STATE_MOUM_YU,STATE_MOUM_EU,STATE_MOUM_I,STATE_MOUM_AE,STATE_MOUM_YAE,STATE_MOUM_E,STATE_MOUM_YE,STATE_MOUM_UI,STATE_MOUM_WA,STATE_MOUM_WAE,STATE_MOUM_OE,STATE_MOUM_WO,STATE_MOUM_WE,STATE_MOUM_WI>
 {
-{GA} {fill_buffer(JONGSUNG1,L"ㄱ");fill_buffer(JONGSUNG2,L""); BEGIN(CHOOSE_MODE(GA));}
-{NA} {fill_buffer(JONGSUNG1,L"ㄴ");fill_buffer(JONGSUNG2,L""); BEGIN(CHOOSE_MODE(NA));}
-{DA} {fill_buffer(JONGSUNG1,L"ㄷ");fill_buffer(JONGSUNG2,L""); BEGIN(CHOOSE_MODE(DA));}
-{BA} {fill_buffer(JONGSUNG1,L"ㅂ");fill_buffer(JONGSUNG2,L""); BEGIN(CHOOSE_MODE(BA));}
-{SA} {fill_buffer(JONGSUNG1,L"ㅅ");fill_buffer(JONGSUNG2,L""); BEGIN(CHOOSE_MODE(SA));}
-{A} {fill_buffer(JONGSUNG1,L"ㅇ");fill_buffer(JONGSUNG2,L""); BEGIN(CHOOSE_MODE(A));}
-{JA} {fill_buffer(JONGSUNG1,L"ㅈ");fill_buffer(JONGSUNG2,L""); BEGIN(CHOOSE_MODE(JA));}
+{GA} {fill_buffer(JONGSUNG1,"ㄱ");fill_buffer(JONGSUNG2,""); BEGIN(CHOOSE_MODE(GA));}
+{NA} {fill_buffer(JONGSUNG1,"ㄴ");fill_buffer(JONGSUNG2,""); BEGIN(CHOOSE_MODE(NA));}
+{DA} {fill_buffer(JONGSUNG1,"ㄷ");fill_buffer(JONGSUNG2,""); BEGIN(CHOOSE_MODE(DA));}
+{BA} {fill_buffer(JONGSUNG1,"ㅂ");fill_buffer(JONGSUNG2,""); BEGIN(CHOOSE_MODE(BA));}
+{SA} {fill_buffer(JONGSUNG1,"ㅅ");fill_buffer(JONGSUNG2,""); BEGIN(CHOOSE_MODE(SA));}
+{A} {fill_buffer(JONGSUNG1,"ㅇ");fill_buffer(JONGSUNG2,""); BEGIN(CHOOSE_MODE(A));}
+{JA} {fill_buffer(JONGSUNG1,"ㅈ");fill_buffer(JONGSUNG2,""); BEGIN(CHOOSE_MODE(JA));}
 }
 
 <STATE_JONG_FIRST_GA>
 {
-{GA} {fill_buffer(JONGSUNG1,L"ㅋ");fill_buffer(JONGSUNG2,L""); BEGIN(STATE_JONG_FIRST_KA);}
-{SA} {fill_buffer(JONGSUNG1,L"ㄱ");fill_buffer(JONGSUNG2,L"ㅅ"); BEGIN(STATE_JONG_FIRST_GA_SA);}
+{GA} {fill_buffer(JONGSUNG1,"ㅋ");fill_buffer(JONGSUNG2,""); BEGIN(STATE_JONG_FIRST_KA);}
+{SA} {fill_buffer(JONGSUNG1,"ㄱ");fill_buffer(JONGSUNG2,"ㅅ"); BEGIN(STATE_JONG_FIRST_GA_SA);}
 }
 <STATE_JONG_FIRST_GA_SA>
 {
-{SA} {fill_buffer(JONGSUNG1,L"ㄱ");fill_buffer(JONGSUNG2,L"ㅎ"); BEGIN(STATE_JONG_FIRST_GA_HA);}
+{SA} {fill_buffer(JONGSUNG1,"ㄱ");fill_buffer(JONGSUNG2,"ㅎ"); BEGIN(STATE_JONG_FIRST_GA_HA);}
 }
 <STATE_JONG_FIRST_GA_HA>
 {
-{SA} {fill_buffer(JONGSUNG1,L"ㄱ");fill_buffer(JONGSUNG2,L"ㅆ"); BEGIN(STATE_JONG_FIRST_GA_SSA);}
+{SA} {fill_buffer(JONGSUNG1,"ㄱ");fill_buffer(JONGSUNG2,"ㅆ"); BEGIN(STATE_JONG_FIRST_GA_SSA);}
 }
 
 <STATE_JONG_FIRST_GA_SSA>
 {
-{SA} {fill_buffer(JONGSUNG1,L"ㄱ");fill_buffer(JONGSUNG2,L"ㅅ"); BEGIN(STATE_JONG_FIRST_GA_SA);}
+{SA} {fill_buffer(JONGSUNG1,"ㄱ");fill_buffer(JONGSUNG2,"ㅅ"); BEGIN(STATE_JONG_FIRST_GA_SA);}
 }
 
 <STATE_JONG_FIRST_KA>
 {
-{GA} {fill_buffer(JONGSUNG1,L"ㄲ");fill_buffer(JONGSUNG2,L""); BEGIN(STATE_JONG_FIRST_KKA);}
+{GA} {fill_buffer(JONGSUNG1,"ㄲ");fill_buffer(JONGSUNG2,""); BEGIN(STATE_JONG_FIRST_KKA);}
 }
 <STATE_JONG_FIRST_KKA>
 {
-{GA} {fill_buffer(JONGSUNG1,L"ㄱ");fill_buffer(JONGSUNG2,L""); BEGIN(STATE_JONG_FIRST_GA);}
+{GA} {fill_buffer(JONGSUNG1,"ㄱ");fill_buffer(JONGSUNG2,""); BEGIN(STATE_JONG_FIRST_GA);}
 }
 
 <STATE_JONG_FIRST_NA>
 {
-{NA} {fill_buffer(JONGSUNG1,L"ㄹ");fill_buffer(JONGSUNG2,L""); BEGIN(STATE_JONG_FIRST_RA);}
-{SA} {fill_buffer(JONGSUNG1,L"ㄴ");fill_buffer(JONGSUNG2,L"ㅅ"); BEGIN(STATE_JONG_FIRST_NA_SA);}
-{JA} {fill_buffer(JONGSUNG1,L"ㄴ");fill_buffer(JONGSUNG2,L"ㅈ"); BEGIN(STATE_JONG_FIRST_NA_JA);}
+{NA} {fill_buffer(JONGSUNG1,"ㄹ");fill_buffer(JONGSUNG2,""); BEGIN(STATE_JONG_FIRST_RA);}
+{SA} {fill_buffer(JONGSUNG1,"ㄴ");fill_buffer(JONGSUNG2,"ㅅ"); BEGIN(STATE_JONG_FIRST_NA_SA);}
+{JA} {fill_buffer(JONGSUNG1,"ㄴ");fill_buffer(JONGSUNG2,"ㅈ"); BEGIN(STATE_JONG_FIRST_NA_JA);}
 }
 <STATE_JONG_FIRST_NA_SA>
 {
-{SA} {fill_buffer(JONGSUNG1,L"ㄴ");fill_buffer(JONGSUNG2,L"ㅎ"); BEGIN(STATE_JONG_FIRST_NA_HA);}
+{SA} {fill_buffer(JONGSUNG1,"ㄴ");fill_buffer(JONGSUNG2,"ㅎ"); BEGIN(STATE_JONG_FIRST_NA_HA);}
 }
 <STATE_JONG_FIRST_NA_HA>
 {
-{SA} {fill_buffer(JONGSUNG1,L"ㄴ");fill_buffer(JONGSUNG2,L"ㅆ"); BEGIN(STATE_JONG_FIRST_NA_SSA);}
+{SA} {fill_buffer(JONGSUNG1,"ㄴ");fill_buffer(JONGSUNG2,"ㅆ"); BEGIN(STATE_JONG_FIRST_NA_SSA);}
 }
 <STATE_JONG_FIRST_NA_SSA>
 {
-{SA} {fill_buffer(JONGSUNG1,L"ㄴ");fill_buffer(JONGSUNG2,L"ㅅ"); BEGIN(STATE_JONG_FIRST_NA_SA);}
+{SA} {fill_buffer(JONGSUNG1,"ㄴ");fill_buffer(JONGSUNG2,"ㅅ"); BEGIN(STATE_JONG_FIRST_NA_SA);}
 }
 
 <STATE_JONG_FIRST_NA_JA>
 {
-{JA} {fill_buffer(JONGSUNG1,L"ㄴ");fill_buffer(JONGSUNG2,L"ㅊ"); BEGIN(STATE_JONG_FIRST_NA_CHA);}
+{JA} {fill_buffer(JONGSUNG1,"ㄴ");fill_buffer(JONGSUNG2,"ㅊ"); BEGIN(STATE_JONG_FIRST_NA_CHA);}
 }
 <STATE_JONG_FIRST_NA_CHA>
 {
-{JA} {fill_buffer(JONGSUNG1,L"ㄴ");fill_buffer(JONGSUNG2,L"ㅉ"); BEGIN(STATE_JONG_FIRST_NA_JJA);}
+{JA} {fill_buffer(JONGSUNG1,"ㄴ");fill_buffer(JONGSUNG2,"ㅉ"); BEGIN(STATE_JONG_FIRST_NA_JJA);}
 }
 <STATE_JONG_FIRST_NA_JJA>
 {
-{JA} {fill_buffer(JONGSUNG1,L"ㄴ");fill_buffer(JONGSUNG2,L"ㅈ"); BEGIN(STATE_JONG_FIRST_NA_JA);}
+{JA} {fill_buffer(JONGSUNG1,"ㄴ");fill_buffer(JONGSUNG2,"ㅈ"); BEGIN(STATE_JONG_FIRST_NA_JA);}
 }
 
 
 <STATE_JONG_FIRST_RA>
 {
-{NA} {fill_buffer(JONGSUNG1,L"ㄴ");fill_buffer(JONGSUNG2,L""); BEGIN(STATE_JONG_FIRST_NA);}
-{GA} {fill_buffer(JONGSUNG1,L"ㄹ");fill_buffer(JONGSUNG2,L"ㄱ"); BEGIN(STATE_JONG_FIRST_RA_GA);}
-{DA} {fill_buffer(JONGSUNG1,L"ㄹ");fill_buffer(JONGSUNG2,L"ㄷ"); BEGIN(STATE_JONG_FIRST_RA_DA);}
-{BA} {fill_buffer(JONGSUNG1,L"ㄹ");fill_buffer(JONGSUNG2,L"ㅂ"); BEGIN(STATE_JONG_FIRST_RA_BA);}
-{SA} {fill_buffer(JONGSUNG1,L"ㄹ");fill_buffer(JONGSUNG2,L"ㅅ"); BEGIN(STATE_JONG_FIRST_RA_SA);}
-{A} {fill_buffer(JONGSUNG1,L"ㄹ");fill_buffer(JONGSUNG2,L"ㅇ"); BEGIN(STATE_JONG_FIRST_RA_A);}
+{NA} {fill_buffer(JONGSUNG1,"ㄴ");fill_buffer(JONGSUNG2,""); BEGIN(STATE_JONG_FIRST_NA);}
+{GA} {fill_buffer(JONGSUNG1,"ㄹ");fill_buffer(JONGSUNG2,"ㄱ"); BEGIN(STATE_JONG_FIRST_RA_GA);}
+{DA} {fill_buffer(JONGSUNG1,"ㄹ");fill_buffer(JONGSUNG2,"ㄷ"); BEGIN(STATE_JONG_FIRST_RA_DA);}
+{BA} {fill_buffer(JONGSUNG1,"ㄹ");fill_buffer(JONGSUNG2,"ㅂ"); BEGIN(STATE_JONG_FIRST_RA_BA);}
+{SA} {fill_buffer(JONGSUNG1,"ㄹ");fill_buffer(JONGSUNG2,"ㅅ"); BEGIN(STATE_JONG_FIRST_RA_SA);}
+{A} {fill_buffer(JONGSUNG1,"ㄹ");fill_buffer(JONGSUNG2,"ㅇ"); BEGIN(STATE_JONG_FIRST_RA_A);}
 }
 
 <STATE_JONG_FIRST_RA_GA>
 {
-{GA} {fill_buffer(JONGSUNG1,L"ㄹ");fill_buffer(JONGSUNG2,L"ㅋ"); BEGIN(STATE_JONG_FIRST_RA_KA);}
+{GA} {fill_buffer(JONGSUNG1,"ㄹ");fill_buffer(JONGSUNG2,"ㅋ"); BEGIN(STATE_JONG_FIRST_RA_KA);}
 }
 <STATE_JONG_FIRST_RA_KA>
 {
-{GA} {fill_buffer(JONGSUNG1,L"ㄹ");fill_buffer(JONGSUNG2,L"ㄲ"); BEGIN(STATE_JONG_FIRST_RA_KKA);}
+{GA} {fill_buffer(JONGSUNG1,"ㄹ");fill_buffer(JONGSUNG2,"ㄲ"); BEGIN(STATE_JONG_FIRST_RA_KKA);}
 }
 <STATE_JONG_FIRST_RA_KKA>
 {
-{GA} {fill_buffer(JONGSUNG1,L"ㄹ");fill_buffer(JONGSUNG2,L"ㄱ"); BEGIN(STATE_JONG_FIRST_RA_GA);}
+{GA} {fill_buffer(JONGSUNG1,"ㄹ");fill_buffer(JONGSUNG2,"ㄱ"); BEGIN(STATE_JONG_FIRST_RA_GA);}
 }
 
 <STATE_JONG_FIRST_RA_DA>
 {
-{DA} {fill_buffer(JONGSUNG1,L"ㄹ");fill_buffer(JONGSUNG2,L"ㅌ"); BEGIN(STATE_JONG_FIRST_RA_TA);}
+{DA} {fill_buffer(JONGSUNG1,"ㄹ");fill_buffer(JONGSUNG2,"ㅌ"); BEGIN(STATE_JONG_FIRST_RA_TA);}
 }
 <STATE_JONG_FIRST_RA_TA>
 {
-{DA} {fill_buffer(JONGSUNG1,L"ㄹ");fill_buffer(JONGSUNG2,L"ㄸ"); BEGIN(STATE_JONG_FIRST_RA_DDA);}
+{DA} {fill_buffer(JONGSUNG1,"ㄹ");fill_buffer(JONGSUNG2,"ㄸ"); BEGIN(STATE_JONG_FIRST_RA_DDA);}
 }
 <STATE_JONG_FIRST_RA_DDA>
 {
-{DA} {fill_buffer(JONGSUNG1,L"ㄹ");fill_buffer(JONGSUNG2,L"ㄷ"); BEGIN(STATE_JONG_FIRST_RA_DA);}
+{DA} {fill_buffer(JONGSUNG1,"ㄹ");fill_buffer(JONGSUNG2,"ㄷ"); BEGIN(STATE_JONG_FIRST_RA_DA);}
 }
 
 <STATE_JONG_FIRST_RA_BA>
 {
-{BA} {fill_buffer(JONGSUNG1,L"ㄹ");fill_buffer(JONGSUNG2,L"ㅍ"); BEGIN(STATE_JONG_FIRST_RA_PA);}
+{BA} {fill_buffer(JONGSUNG1,"ㄹ");fill_buffer(JONGSUNG2,"ㅍ"); BEGIN(STATE_JONG_FIRST_RA_PA);}
 }
 <STATE_JONG_FIRST_RA_PA>
 {
-{BA} {fill_buffer(JONGSUNG1,L"ㄹ");fill_buffer(JONGSUNG2,L"ㅃ"); BEGIN(STATE_JONG_FIRST_RA_PPA);}
+{BA} {fill_buffer(JONGSUNG1,"ㄹ");fill_buffer(JONGSUNG2,"ㅃ"); BEGIN(STATE_JONG_FIRST_RA_PPA);}
 }
 <STATE_JONG_FIRST_RA_PPA>
 {
-{BA} {fill_buffer(JONGSUNG1,L"ㄹ");fill_buffer(JONGSUNG2,L"ㅂ"); BEGIN(STATE_JONG_FIRST_RA_BA);}
+{BA} {fill_buffer(JONGSUNG1,"ㄹ");fill_buffer(JONGSUNG2,"ㅂ"); BEGIN(STATE_JONG_FIRST_RA_BA);}
 }
 
 <STATE_JONG_FIRST_RA_SA>
 {
-{SA} {fill_buffer(JONGSUNG1,L"ㄹ");fill_buffer(JONGSUNG2,L"ㅎ"); BEGIN(STATE_JONG_FIRST_RA_HA);}
+{SA} {fill_buffer(JONGSUNG1,"ㄹ");fill_buffer(JONGSUNG2,"ㅎ"); BEGIN(STATE_JONG_FIRST_RA_HA);}
 }
 <STATE_JONG_FIRST_RA_HA>
 {
-{SA} {fill_buffer(JONGSUNG1,L"ㄹ");fill_buffer(JONGSUNG2,L"ㅆ"); BEGIN(STATE_JONG_FIRST_RA_SSA);}
+{SA} {fill_buffer(JONGSUNG1,"ㄹ");fill_buffer(JONGSUNG2,"ㅆ"); BEGIN(STATE_JONG_FIRST_RA_SSA);}
 }
 <STATE_JONG_FIRST_RA_SSA>
 {
-{SA} {fill_buffer(JONGSUNG1,L"ㄹ");fill_buffer(JONGSUNG2,L"ㅅ"); BEGIN(STATE_JONG_FIRST_RA_SA);}
+{SA} {fill_buffer(JONGSUNG1,"ㄹ");fill_buffer(JONGSUNG2,"ㅅ"); BEGIN(STATE_JONG_FIRST_RA_SA);}
 }
 
 <STATE_JONG_FIRST_RA_A>
 {
-{A} {fill_buffer(JONGSUNG1,L"ㄹ");fill_buffer(JONGSUNG2,L"ㅇ"); BEGIN(STATE_JONG_FIRST_RA_MA);}
+{A} {fill_buffer(JONGSUNG1,"ㄹ");fill_buffer(JONGSUNG2,"ㅇ"); BEGIN(STATE_JONG_FIRST_RA_MA);}
 }
 <STATE_JONG_FIRST_RA_MA>
 {
-{A} {fill_buffer(JONGSUNG1,L"ㄹ");fill_buffer(JONGSUNG2,L"ㅁ"); BEGIN(STATE_JONG_FIRST_RA_A);}
+{A} {fill_buffer(JONGSUNG1,"ㄹ");fill_buffer(JONGSUNG2,"ㅁ"); BEGIN(STATE_JONG_FIRST_RA_A);}
 }
 
 
 
 <STATE_JONG_FIRST_DA>
 {
-{DA} {fill_buffer(JONGSUNG1,L"ㅌ");fill_buffer(JONGSUNG2,L""); BEGIN(STATE_JONG_FIRST_TA);}
+{DA} {fill_buffer(JONGSUNG1,"ㅌ");fill_buffer(JONGSUNG2,""); BEGIN(STATE_JONG_FIRST_TA);}
 }
 <STATE_JONG_FIRST_TA>
 {
-{DA} {fill_buffer(JONGSUNG1,L"ㄸ");fill_buffer(JONGSUNG2,L""); BEGIN(STATE_JONG_FIRST_DDA);}
+{DA} {fill_buffer(JONGSUNG1,"ㄸ");fill_buffer(JONGSUNG2,""); BEGIN(STATE_JONG_FIRST_DDA);}
 }
 <STATE_JONG_FIRST_DDA>
 {
-{DA} {fill_buffer(JONGSUNG1,L"ㄷ");fill_buffer(JONGSUNG2,L""); BEGIN(STATE_JONG_FIRST_DA);}
+{DA} {fill_buffer(JONGSUNG1,"ㄷ");fill_buffer(JONGSUNG2,""); BEGIN(STATE_JONG_FIRST_DA);}
 }
 
 <STATE_JONG_FIRST_BA>
 {
-{BA} {fill_buffer(JONGSUNG1,L"ㅍ");fill_buffer(JONGSUNG2,L""); BEGIN(STATE_JONG_FIRST_PA);}
-{SA} {fill_buffer(JONGSUNG1,L"ㅂ");fill_buffer(JONGSUNG2,L""); BEGIN(STATE_JONG_FIRST_BA_SA);}
+{BA} {fill_buffer(JONGSUNG1,"ㅍ");fill_buffer(JONGSUNG2,""); BEGIN(STATE_JONG_FIRST_PA);}
+{SA} {fill_buffer(JONGSUNG1,"ㅂ");fill_buffer(JONGSUNG2,""); BEGIN(STATE_JONG_FIRST_BA_SA);}
 }
 <STATE_JONG_FIRST_BA_SA>
 {
-{SA} {fill_buffer(JONGSUNG1,L"ㅂ");fill_buffer(JONGSUNG2,L"ㅎ"); BEGIN(STATE_JONG_FIRST_RA_HA);}
+{SA} {fill_buffer(JONGSUNG1,"ㅂ");fill_buffer(JONGSUNG2,"ㅎ"); BEGIN(STATE_JONG_FIRST_RA_HA);}
 }
 <STATE_JONG_FIRST_BA_HA>
 {
-{SA} {fill_buffer(JONGSUNG1,L"ㅂ");fill_buffer(JONGSUNG2,L"ㅆ"); BEGIN(STATE_JONG_FIRST_RA_SSA);}
+{SA} {fill_buffer(JONGSUNG1,"ㅂ");fill_buffer(JONGSUNG2,"ㅆ"); BEGIN(STATE_JONG_FIRST_RA_SSA);}
 }
 <STATE_JONG_FIRST_BA_SSA>
 {
-{SA} {fill_buffer(JONGSUNG1,L"ㅂ");fill_buffer(JONGSUNG2,L"ㅅ"); BEGIN(STATE_JONG_FIRST_RA_SA);}
+{SA} {fill_buffer(JONGSUNG1,"ㅂ");fill_buffer(JONGSUNG2,"ㅅ"); BEGIN(STATE_JONG_FIRST_RA_SA);}
 }
 
 <STATE_JONG_FIRST_PA>
 {
-{BA} {fill_buffer(JONGSUNG1,L"ㅃ");fill_buffer(JONGSUNG2,L""); BEGIN(STATE_JONG_FIRST_PPA);}
+{BA} {fill_buffer(JONGSUNG1,"ㅃ");fill_buffer(JONGSUNG2,""); BEGIN(STATE_JONG_FIRST_PPA);}
 }
 <STATE_JONG_FIRST_PPA>
 {
-{BA} {fill_buffer(JONGSUNG1,L"ㅂ");fill_buffer(JONGSUNG2,L""); BEGIN(STATE_JONG_FIRST_BA);}
+{BA} {fill_buffer(JONGSUNG1,"ㅂ");fill_buffer(JONGSUNG2,""); BEGIN(STATE_JONG_FIRST_BA);}
 }
 
 <STATE_JONG_FIRST_SA>
 {
-{SA} {fill_buffer(JONGSUNG1,L"ㅎ");fill_buffer(JONGSUNG2,L""); BEGIN(STATE_JONG_FIRST_HA);}
+{SA} {fill_buffer(JONGSUNG1,"ㅎ");fill_buffer(JONGSUNG2,""); BEGIN(STATE_JONG_FIRST_HA);}
 }
 <STATE_JONG_FIRST_HA>
 {
-{SA} {fill_buffer(JONGSUNG1,L"ㅆ");fill_buffer(JONGSUNG2,L""); BEGIN(STATE_JONG_FIRST_SSA);}
+{SA} {fill_buffer(JONGSUNG1,"ㅆ");fill_buffer(JONGSUNG2,""); BEGIN(STATE_JONG_FIRST_SSA);}
 }
 <STATE_JONG_FIRST_SSA>
 {
-{SA} {fill_buffer(JONGSUNG1,L"ㅅ");fill_buffer(JONGSUNG2,L""); BEGIN(STATE_JONG_FIRST_SA);}
+{SA} {fill_buffer(JONGSUNG1,"ㅅ");fill_buffer(JONGSUNG2,""); BEGIN(STATE_JONG_FIRST_SA);}
 }
 
 <STATE_JONG_FIRST_JA>
 {
-{JA} {fill_buffer(JONGSUNG1,L"ㅊ");fill_buffer(JONGSUNG2,L""); BEGIN(STATE_JONG_FIRST_CHA);}
+{JA} {fill_buffer(JONGSUNG1,"ㅊ");fill_buffer(JONGSUNG2,""); BEGIN(STATE_JONG_FIRST_CHA);}
 }
 <STATE_JONG_FIRST_CHA>
 {
-{JA} {fill_buffer(JONGSUNG1,L"ㅉ");fill_buffer(JONGSUNG2,L""); BEGIN(STATE_JONG_FIRST_JJA);}
+{JA} {fill_buffer(JONGSUNG1,"ㅉ");fill_buffer(JONGSUNG2,""); BEGIN(STATE_JONG_FIRST_JJA);}
 }
 <STATE_JONG_FIRST_JJA>
 {
-{JA} {fill_buffer(JONGSUNG1,L"ㅈ");fill_buffer(JONGSUNG2,L""); BEGIN(STATE_JONG_FIRST_JA);}
+{JA} {fill_buffer(JONGSUNG1,"ㅈ");fill_buffer(JONGSUNG2,""); BEGIN(STATE_JONG_FIRST_JA);}
 }
 
 <STATE_JONG_FIRST_A>
 {
-{A} {fill_buffer(JONGSUNG1,L"ㅁ");fill_buffer(JONGSUNG2,L""); BEGIN(STATE_JONG_FIRST_MA);}
+{A} {fill_buffer(JONGSUNG1,"ㅁ");fill_buffer(JONGSUNG2,""); BEGIN(STATE_JONG_FIRST_MA);}
 }
 <STATE_JONG_FIRST_MA>
 {
-{A} {fill_buffer(JONGSUNG1,L"ㅇ");fill_buffer(JONGSUNG2,L""); BEGIN(STATE_JONG_FIRST_A);}
+{A} {fill_buffer(JONGSUNG1,"ㅇ");fill_buffer(JONGSUNG2,""); BEGIN(STATE_JONG_FIRST_A);}
 }
 
 
 <STATE_JONG_FIRST_GA,STATE_JONG_FIRST_KA,STATE_JONG_FIRST_KKA,STATE_JONG_FIRST_NA,STATE_JONG_FIRST_RA,STATE_JONG_FIRST_DA,STATE_JONG_FIRST_TA,STATE_JONG_FIRST_BA,STATE_JONG_FIRST_PA,STATE_JONG_FIRST_SA,STATE_JONG_FIRST_HA,STATE_JONG_FIRST_SSA,STATE_JONG_FIRST_JA,STATE_JONG_FIRST_CHA,STATE_JONG_FIRST_A,STATE_JONG_FIRST_MA,STATE_JONG_FIRST_GA_SA,STATE_JONG_FIRST_RA_GA,STATE_JONG_FIRST_RA_TA,STATE_JONG_FIRST_RA_BA,STATE_JONG_FIRST_RA_PA,STATE_JONG_FIRST_RA_SA,STATE_JONG_FIRST_RA_HA,STATE_JONG_FIRST_RA_MA,STATE_JONG_FIRST_NA_HA,STATE_JONG_FIRST_NA_JA,STATE_JONG_FIRST_BA_SA>
 {
-{GA} { flush_buffer(); fill_buffer(CHOSUNG,L"ㄱ"); BEGIN(STATE_CHOSUNG_GA); }
-{NA} { flush_buffer(); fill_buffer(CHOSUNG,L"ㄴ"); BEGIN(STATE_CHOSUNG_NA); }
-{DA} { flush_buffer(); fill_buffer(CHOSUNG,L"ㄷ"); BEGIN(STATE_CHOSUNG_DA); }
-{BA} { flush_buffer(); fill_buffer(CHOSUNG,L"ㅂ"); BEGIN(STATE_CHOSUNG_BA); }
-{SA} { flush_buffer(); fill_buffer(CHOSUNG,L"ㅅ"); BEGIN(STATE_CHOSUNG_SA); }
-{JA} { flush_buffer(); fill_buffer(CHOSUNG,L"ㅈ"); BEGIN(STATE_CHOSUNG_JA); }
-{A} { flush_buffer(); fill_buffer(CHOSUNG,L"ㅇ"); BEGIN(STATE_CHOSUNG_A); }
+{GA} { flush_buffer(); fill_buffer(CHOSUNG,"ㄱ"); BEGIN(STATE_CHOSUNG_GA); }
+{NA} { flush_buffer(); fill_buffer(CHOSUNG,"ㄴ"); BEGIN(STATE_CHOSUNG_NA); }
+{DA} { flush_buffer(); fill_buffer(CHOSUNG,"ㄷ"); BEGIN(STATE_CHOSUNG_DA); }
+{BA} { flush_buffer(); fill_buffer(CHOSUNG,"ㅂ"); BEGIN(STATE_CHOSUNG_BA); }
+{SA} { flush_buffer(); fill_buffer(CHOSUNG,"ㅅ"); BEGIN(STATE_CHOSUNG_SA); }
+{JA} { flush_buffer(); fill_buffer(CHOSUNG,"ㅈ"); BEGIN(STATE_CHOSUNG_JA); }
+{A} { flush_buffer(); fill_buffer(CHOSUNG,"ㅇ"); BEGIN(STATE_CHOSUNG_A); }
 {X} { flush_buffer(); BEGIN(STATE_CHOSUNG); }
 }
 
 <STATE_JONG_FIRST_GA,STATE_JONG_FIRST_KA,STATE_JONG_FIRST_KKA,STATE_JONG_FIRST_NA,STATE_JONG_FIRST_RA,STATE_JONG_FIRST_DA,STATE_JONG_FIRST_TA,STATE_JONG_FIRST_BA,STATE_JONG_FIRST_PA,STATE_JONG_FIRST_SA,STATE_JONG_FIRST_HA,STATE_JONG_FIRST_SSA,STATE_JONG_FIRST_JA,STATE_JONG_FIRST_CHA,STATE_JONG_FIRST_A,STATE_JONG_FIRST_MA,STATE_JONG_FIRST_GA_SA,STATE_JONG_FIRST_RA_GA,STATE_JONG_FIRST_RA_TA,STATE_JONG_FIRST_RA_BA,STATE_JONG_FIRST_RA_PA,STATE_JONG_FIRST_RA_SA,STATE_JONG_FIRST_RA_HA,STATE_JONG_FIRST_RA_MA,STATE_JONG_FIRST_NA_HA,STATE_JONG_FIRST_NA_JA,STATE_JONG_FIRST_BA_SA,STATE_JONG_FIRST_GA_HA,STATE_JONG_FIRST_GA_SSA,STATE_JONG_FIRST_RA_KA,STATE_JONG_FIRST_RA_KKA,STATE_JONG_FIRST_RA_DA,STATE_JONG_FIRST_RA_DDA,STATE_JONG_FIRST_RA_PPA,STATE_JONG_FIRST_NA_SA,STATE_JONG_FIRST_NA_SSA,STATE_JONG_FIRST_RA_SSA,STATE_JONG_FIRST_NA_CHA,STATE_JONG_FIRST_NA_JJA,STATE_JONG_FIRST_RA_A,STATE_JONG_FIRST_BA_HA,STATE_JONG_FIRST_BA_SSA,STATE_JONG_FIRST_DDA,STATE_JONG_FIRST_PPA,STATE_JONG_FIRST_JJA>
 {
-{CHUN} {std::wstring temp = borrow_one();flush_buffer();fill_buffer(CHOSUNG, temp);fill_buffer(JUNGSUNG,L"·"); BEGIN(STATE_MOUM_C);}
-{JI} {std::wstring temp = borrow_one();flush_buffer();fill_buffer(CHOSUNG, temp);fill_buffer(JUNGSUNG,L"ㅡ"); BEGIN(STATE_MOUM_EU);}
-{IN} {std::wstring temp = borrow_one();flush_buffer();fill_buffer(CHOSUNG, temp);fill_buffer(JUNGSUNG,L"ㅣ"); BEGIN(STATE_MOUM_I);}
+{CHUN} {std::string temp = borrow_one();flush_buffer();fill_buffer(CHOSUNG, temp);fill_buffer(JUNGSUNG,"·"); BEGIN(STATE_MOUM_C);}
+{JI} {std::string temp = borrow_one();flush_buffer();fill_buffer(CHOSUNG, temp);fill_buffer(JUNGSUNG,"ㅡ"); BEGIN(STATE_MOUM_EU);}
+{IN} {std::string temp = borrow_one();flush_buffer();fill_buffer(CHOSUNG, temp);fill_buffer(JUNGSUNG,"ㅣ"); BEGIN(STATE_MOUM_I);}
 }
 
 

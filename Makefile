@@ -8,7 +8,6 @@ LEX=flex
 INCLUDE_DIR=$(ROOT_DIR)/include
 
 INCLUDES+= -I$(ROOT_DIR)/grammar -I$(INCLUDE_DIR)
-LIBS+= 
 
 CXXFLAGS+= $(INCLUDES)
 CFLAGS+= $(INCLUDES)
@@ -37,6 +36,6 @@ $(DEPS): $(SRCS) $(C_SRCS) $(HEADERS)
 all: $(DEPS) $(BUILD_DIR)/$(PROGRAM)
 
 $(BUILD_DIR)/$(PROGRAM): $(OBJS) $(C_OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) $(C_OBJS) -o $@
+	$(CXX) $(CXXFLAGS) $(OBJS) $(C_OBJS) -o $@ $(LIBS)
 
 include $(DEPS)
