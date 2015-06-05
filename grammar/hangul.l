@@ -2,6 +2,8 @@
 #include "token.h"
 %}
 
+%option noyywrap
+
 KEY_CHUN [/]
 KEY_JI [\*]
 KEY_IN [-]
@@ -82,14 +84,20 @@ JONGSUNG_BOKYONG_CHOSUNG {GUSU}|{NUJU}|{RUGU}|{MUGU}|{BUSU}|{NUHU}|{RUMU}|{RUSU}
 
 BATCHIM {GA}|{NA}|{DA}|{RA}|{MA}|{BA}|{SA}|{A}|{JA}|{CHA}|{KA}|{TA}|{PA}|{HA}|{KKA}|{SSA}|{JONGSUNG_BOKYONG_CHOSUNG}
 
+JAUM_7 {GA}|{NA}|{DA}|{BA}|{SA}|{JA}|{A}
+MOUM_3 {KEY_CHUN}|{KEY_JI}|{KEY_IN}
+SIGMA {JAUM_7}|{MOUM_3}
+
+%x state_S
+%x state_Moum
+%x state_Moum_c
+%x state_Moum_cc
+%x state_Moum_cci
+
 %%
 
 
-{ENTER} { yyterminate(); }
+<*>{ENTER}	{ return FLUSH; }
 
 %%
 
-int yywrap()
-{
-	return 1;
-}

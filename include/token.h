@@ -8,6 +8,12 @@
 #ifndef INCLUDE_TOKEN_H_
 #define INCLUDE_TOKEN_H_
 
-
+enum Token
+{
+	WITH_BATCHIM = 65536,
+	WITHOUT_BATCHIM,
+	INCOMPLETE_CHOSUNG,
+	FLUSH,
+};
 
 #endif /* INCLUDE_TOKEN_H_ */
