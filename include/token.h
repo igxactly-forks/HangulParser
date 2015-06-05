@@ -33,7 +33,8 @@ extern std::string buffer[BUFFER_TYPE_SIZE];
 
 void fill_buffer(int pos, const std::string& in);
 void flush_buffer();
+void print_buffer();
 std::string borrow_one();
-void add_space();
+void add_string(const std::string& str);
 
 #endif /* INCLUDE_TOKEN_H_ */

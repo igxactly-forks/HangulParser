@@ -13,7 +13,8 @@
 #include <cassert>
 #include <iostream>
 
-std::string buffer[BUFFER_TYPE_SIZE];
+std::string buffer[BUFFER_TYPE_SIZE] = {"","","",""};
+static std::string global_buffer="";
 
 //static const uint32_t HANGUL_BASE = 44032;
 static const uint32_t CHOSUNG_BASE = 588;
@@ -53,14 +54,17 @@ static int get_index(const std::vector<std::string>& list, const std::string& ta
 
 void fill_buffer(int pos, const std::string& in)
 {
-	std::cout<<in<<"["<<pos<<"]"<<std::endl;
+	//std::cout<<in<<"["<<pos<<"]"<<std::endl;
 	buffer[pos] = in;
 }
 void flush_buffer()
 {
 	uint32_t sum = 0;
+	if(buffer[0].length() == 0)
+		return;
 	int ret = get_index(CHOSUNG_LIST, buffer[0]);
-	assert(ret >= 0);
+	if(ret < 0)
+		return;
 	sum += CHOSUNG_BASE*ret;
 
 	assert(buffer[1].length() > 0);
@@ -73,7 +77,7 @@ void flush_buffer()
 	assert(ret >= 0);
 	sum += ret;
 
-	std::cout <<"Char: "<<all_hangul[sum]<<std::endl;
+	global_buffer=global_buffer.append(all_hangul[sum]);
 
 	buffer[0] = "";
 	buffer[1] = "";
@@ -97,7 +101,61 @@ std::string borrow_one()
 	return ret;
 }
 
-void add_space()
+void add_string(const std::string& str)
 {
-	std::cout<<"Char: < >"<<std::endl;
+	global_buffer=global_buffer.append(str);
+}
+
+void print_buffer()
+{
+	std::cout<<"Current: "<<global_buffer;
+	uint32_t sum = 0;
+	if(buffer[0].length() == 0)
+	{
+		std::cout<<std::endl;
+		return;
+	}
+	int ret = get_index(CHOSUNG_LIST, buffer[0]);
+	if(ret < 0 || buffer[1].length()==0)
+	{
+		std::cout<<buffer[0]<<std::endl;
+		return;
+	}
+
+
+	assert(buffer[1].length() > 0);
+	sum += CHOSUNG_BASE*ret;
+	ret = get_index(JUNGSUNG_LIST, buffer[1]);
+	if(ret < 0)
+	{
+		std::cout<<buffer[0]<<buffer[1]<<std::endl;
+		return;
+	}
+	sum += JUNGSUNG_BASE*ret;
+
+
+#ifdef JONGSUNG_USUN
+	std::string concat = buffer[2];
+	concat = concat.append(buffer[3]);
+	ret = get_index(JONGSUNG_LIST, concat);
+	if(ret < 0)
+	{
+		ret = get_index(JONGSUNG_LIST, buffer[2]);
+		sum += ret;
+		std::cout<<all_hangul[sum]<<buffer[3]<<std::endl;
+		return;
+	}
+	else
+	{
+		sum += ret;
+		std::cout<<all_hangul[sum]<<std::endl;
+		return;
+	}
+#endif
+#ifdef CHOSUNG_USUN
+	ret = get_index(JONGSUNG_LIST, buffer[2]);
+	sum += ret;
+	std::cout<<all_hangul[sum]<<buffer[3]<<std::endl;
+	return;
+#endif
 }
