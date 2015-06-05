@@ -14,7 +14,7 @@ CXXFLAGS+= $(INCLUDES)
 CFLAGS+= $(INCLUDES)
 
 BUILD_DIR=build
-PROGRAM=regexp
+PROGRAM=hangul
 DEPS=.make.dep
 
 include grammar/Makefile
@@ -30,7 +30,7 @@ clean:
 
 depend: $(DEPS)
 
-$(DEPS): $(SRCS) $(C_SRCS)
+$(DEPS): $(SRCS) $(C_SRCS) $(HEADERS)
 	@$(CXX) $(CXXFLAGS) -MM $(SRCS) > $(DEPS);
 	#@$(CC) $(CFLAGS) -MM $(C_SRCS) >> $(DEPS);
 

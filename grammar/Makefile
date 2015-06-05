@@ -8,3 +8,4 @@ $(GRAMMAR_DIR)/hangul_lex.cpp $(GRAMMAR_DIR)/hangul_lex.hpp: $(GRAMMAR_DIR)/hang
 	$(LEX) --c++ --header-file=$(GRAMMAR_DIR)/hangul_lex.hpp --outfile=$(GRAMMAR_DIR)/hangul_lex.cpp $(GRAMMAR_DIR)/hangul.l
 
 SRCS+= $(GRAMMAR_DIR)/hangul_lex.cpp
+HEADERS+= $(GRAMMAR_DIR)/hangul_lex.hpp
