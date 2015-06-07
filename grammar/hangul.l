@@ -701,6 +701,7 @@ SIGMA {JAUM_7}|{MOUM_3}
 
 
 <*>{ENTER}	{ print_buffer();}
+<*><<EOF>>	{ flush_buffer(); print_buffer(); return END_OF_FILE; }
 
 %%
 

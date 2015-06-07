@@ -57,6 +57,8 @@ make clean #모드 변경시에는 반드시 clean을 해 주어야 한다.
 CXXFLAGS=-DJONGSUNG_USUN make all #종성 우선 오토마타
 ~~~~~~~~~~~~~
 
+생성된 바이너리는 build/hangul 에 위치한다.
+
 ## 사용 방법
 C++에는 키보드를 일반적으로 직접 받을 수가 없다.
 엔터는 일반적으로 아무런 일을 하지 않는다.

@@ -16,6 +16,7 @@ enum Token
 	WITHOUT_BATCHIM,
 	INCOMPLETE_CHOSUNG,
 	FLUSH,
+	END_OF_FILE,
 };
 
 enum BufferType
