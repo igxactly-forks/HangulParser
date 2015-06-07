@@ -332,6 +332,8 @@ SIGMA {JAUM_7}|{MOUM_3}
 {SA} {fill_buffer(JONGSUNG1,"ㅅ");fill_buffer(JONGSUNG2,""); BEGIN(CHOOSE_MODE(SA));}
 {A} {fill_buffer(JONGSUNG1,"ㅇ");fill_buffer(JONGSUNG2,""); BEGIN(CHOOSE_MODE(A));}
 {JA} {fill_buffer(JONGSUNG1,"ㅈ");fill_buffer(JONGSUNG2,""); BEGIN(CHOOSE_MODE(JA));}
+{X} { flush_buffer(); BEGIN(STATE_CHOSUNG); }
+{DOT} { flush_buffer(); add_string("."); BEGIN(STATE_CHOSUNG); }
 }
 
 <STATE_JONG_FIRST_GA>
