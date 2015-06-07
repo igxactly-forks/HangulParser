@@ -51,10 +51,10 @@ KEY_A_MA [2]
 ## 빌드 방법
 ~~~~~~~~~~~~~{.bash}
 make clean #모드 변경시에는 반드시 clean을 해 주어야 한다.
-CFLAGS=CHOSUNG_USUN make all #초성 우선 오토마타
+CXXFLAGS=CHOSUNG_USUN make all #초성 우선 오토마타
 
 make clean #모드 변경시에는 반드시 clean을 해 주어야 한다.
-CFLAGS=JONGSUNG_USUN make all #종성 우선 오토마타
+CXXFLAGS=JONGSUNG_USUN make all #종성 우선 오토마타
 ~~~~~~~~~~~~~
 
 ## 사용 방법
