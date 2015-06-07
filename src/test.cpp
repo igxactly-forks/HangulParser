@@ -48,6 +48,12 @@ int main()
 			running = false;
 			break;
 		}
+		case END_OF_FILE:
+		{
+			printf("EOF.\n");
+			running = false;
+			break;
+		}
 		default:
 		{
 			printf("Unknown: %s\n", lexer.YYText());

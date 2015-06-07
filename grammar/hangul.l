@@ -701,8 +701,8 @@ SIGMA {JAUM_7}|{MOUM_3}
 
 
 <*>{ENTER}	{ print_buffer();}
-<*><<EOF>>	{ flush_buffer(); print_buffer(); return END_OF_FILE; }
+<<EOF>>	{ flush_buffer(); print_buffer(); return END_OF_FILE; }
 
 %%
 
-int yyFlexLexer::yywrap() { return 0; }
+int yyFlexLexer::yywrap() { return 1; }
