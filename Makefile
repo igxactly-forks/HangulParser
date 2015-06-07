@@ -16,6 +16,8 @@ BUILD_DIR=build
 PROGRAM=hangul
 DEPS=.make.dep
 
+all: $(DEPS) $(BUILD_DIR)/$(PROGRAM)
+
 include grammar/Makefile
 include src/Makefile
 
@@ -32,8 +34,6 @@ depend: $(DEPS)
 $(DEPS): $(SRCS) $(C_SRCS) $(HEADERS)
 	@$(CXX) $(CXXFLAGS) -MM $(SRCS) > $(DEPS);
 	@#$(CC) $(CFLAGS) -MM $(C_SRCS) >> $(DEPS);
-
-all: $(DEPS) $(BUILD_DIR)/$(PROGRAM)
 
 $(BUILD_DIR)/$(PROGRAM): $(OBJS) $(C_OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) $(C_OBJS) -o $@ $(LIBS)
