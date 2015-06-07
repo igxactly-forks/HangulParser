@@ -49,7 +49,7 @@ KEY_A_MA [2]
  
 
 ## 빌드 방법
-~~~~~~~~~~~~~{.bash}
+~~~~~~~~~~~~~{.sh}
 make clean #모드 변경시에는 반드시 clean을 해 주어야 한다.
 CXXFLAGS=CHOSUNG_USUN make all #초성 우선 오토마타
 
