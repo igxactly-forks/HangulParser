@@ -153,9 +153,16 @@ void print_buffer()
 	}
 #endif
 #ifdef CHOSUNG_USUN
-	ret = get_index(JONGSUNG_LIST, buffer[2]);
-	sum += ret;
-	std::cout<<all_hangul[sum]<<buffer[3]<<std::endl;
+	std::string additional = buffer[2];
+	if(buffer[3].length() > 0)
+	{
+		ret = get_index(JONGSUNG_LIST, buffer[2]);
+		assert(ret >= 0);
+		sum += ret;
+		additional = buffer[3];
+	}
+
+	std::cout<<all_hangul[sum]<<additional<<std::endl;
 	return;
 #endif
 }

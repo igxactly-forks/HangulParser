@@ -18,8 +18,6 @@ enum Token
 	FLUSH,
 };
 
-#define JONGSUNG_USUN
-
 enum BufferType
 {
 	CHOSUNG=0,

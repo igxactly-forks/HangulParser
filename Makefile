@@ -31,7 +31,7 @@ depend: $(DEPS)
 
 $(DEPS): $(SRCS) $(C_SRCS) $(HEADERS)
 	@$(CXX) $(CXXFLAGS) -MM $(SRCS) > $(DEPS);
-	#@$(CC) $(CFLAGS) -MM $(C_SRCS) >> $(DEPS);
+	@#$(CC) $(CFLAGS) -MM $(C_SRCS) >> $(DEPS);
 
 all: $(DEPS) $(BUILD_DIR)/$(PROGRAM)
 
