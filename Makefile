@@ -1,7 +1,7 @@
 ROOT_DIR=$(CURDIR)
 CXX+= -std=c++11
-CXXFLAGS= -g -O0 -Wall
-CFLAGS= -g -O0
+CXXFLAGS+= -g -O0 -Wall
+CFLAGS+= -g -O0
 LEX=flex
 #YACC=bison
 
@@ -39,3 +39,5 @@ $(BUILD_DIR)/$(PROGRAM): $(OBJS) $(C_OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) $(C_OBJS) -o $@ $(LIBS)
 
 include $(DEPS)
+
+.PHONY: all clean depend
