@@ -1,5 +1,7 @@
 # Project #3 한글 오토마타 만들기
 
+[![Build Status](https://travis-ci.org/leeopop/HangulParser.svg)](https://travis-ci.org/leeopop/HangulParser)
+
 이 프로젝트는 2015년 봄학기 CS522 프로젝트 3를 구현한 것이다.
 
 본 프로젝트에서는 삼성 핸드폰 기준의 3x4 자판으로 한글을 입력하는 오토마타를 구현한다.
