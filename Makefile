@@ -1,5 +1,5 @@
 ROOT_DIR=$(CURDIR)
-CXXFLAGS+= -std=c++11 -g -O0 -Wall
+CXXFLAGS+= -g -O0 -Wall
 CFLAGS+= -g -O0
 
 INCLUDE_DIR=$(ROOT_DIR)/include
@@ -29,11 +29,11 @@ clean:
 depend: $(DEPS)
 
 $(DEPS): $(SRCS) $(C_SRCS) $(HEADERS)
-	@$(CXX) $(CXXFLAGS) -MM $(SRCS) > $(DEPS);
+	@$(CXX) -std=c++11 $(CXXFLAGS) -MM $(SRCS) > $(DEPS);
 	@#$(CC) $(CFLAGS) -MM $(C_SRCS) >> $(DEPS);
 
 $(BUILD_DIR)/$(PROGRAM): $(OBJS) $(C_OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) $(C_OBJS) -o $@ $(LIBS)
+	$(CXX) -std=c++11 $(CXXFLAGS) $(OBJS) $(C_OBJS) -o $@ $(LIBS)
 
 include $(DEPS)
 
