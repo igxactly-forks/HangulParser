@@ -1,0 +1,9 @@
+addons:
+  apt:
+    packages:
+    - flex
+language: cpp
+compiler:
+  - clang
+  - gcc
+script: make
