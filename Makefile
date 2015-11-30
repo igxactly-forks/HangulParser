@@ -1,9 +1,6 @@
 ROOT_DIR=$(CURDIR)
-CXX+= -std=c++11
-CXXFLAGS+= -g -O0 -Wall
+CXXFLAGS+= -std=c++11 -g -O0 -Wall
 CFLAGS+= -g -O0
-LEX=flex
-#YACC=bison
 
 INCLUDE_DIR=$(ROOT_DIR)/include
 
